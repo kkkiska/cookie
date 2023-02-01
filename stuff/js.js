@@ -39,10 +39,26 @@ window.onload = function LoadData() {
   clikers = JSON.parse(localStorage.getItem ('clickers'))
   grannys = JSON.parse(localStorage.getItem ('grannys'))
   factorys = JSON.parse(localStorage.getItem ('factorys'))
-  moneySec.textContent = moneysec;
+  if (moneysec > 0) {
+    moneySec.textContent = moneysec;
+    } else {
+      moneySec.textContent = 0;
+    }
+  if (clikerNum > 0) {
   clikerNum.textContent = clikers;
+  } else {
+    clikerNum.textContent = 0;
+  }
+  if (grannys > 0) {
   grannyNum.textContent = grannys;
+  } else {
+    grannyNum.textContent = 0;
+  }
+  if (factorys > 0) {
   factoryNum.textContent = factorys;
+  } else {
+    factoryNum.textContent = 0;
+  }
 }
 
 itemClicker.addEventListener ("click", () => {
@@ -53,6 +69,9 @@ itemClicker.addEventListener ("click", () => {
     moneyNow.textContent = money;
     moneysec = moneysec + 1;
     clikerNum.textContent = clikers;
+    moneySec.textContent = moneysec;
+  } else {
+    alert ("У вас недостаточно денег!")
   }
 })
 
@@ -89,6 +108,8 @@ itemGranny.addEventListener ("click", () => {
     moneyNow.textContent = money;
     moneysec = moneysec + 10;
     moneySec.textContent = moneysec;
+  } else {
+    alert ("У вас недостаточно денег!")
   }
 })
 
@@ -100,6 +121,8 @@ itemFactory.addEventListener ("click", () => {
     moneyNow.textContent = money;
     moneysec = moneysec + 100;
     moneySec.textContent = moneysec;
+  } else {
+    alert ("У вас недостаточно денег!")
   }
 })
 
